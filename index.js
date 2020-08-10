@@ -2,8 +2,9 @@ const http = require("http");
 const fs = require("fs");
 const url = require("url");
 const querystring = require("querystring");
+require('dotenv').config()
 
-const PORT = 2000;
+const PORT = process.env.PORT;
 console.log(`Server is listen on port ${PORT}`, `http://localhost:${PORT}`);
 
 const server = (req, res) => {
