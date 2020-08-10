@@ -7,6 +7,7 @@ const PORT = 2000;
 console.log(`Server is listen on port ${PORT}`, `http://localhost:${PORT}`);
 
 const server = (req, res) => {
+  console.log(req.url)
   if (req.method === "GET" && req.url === "/") {
     res.setHeader("Content-Type", "text/html");
     res.statusCode = 200;
