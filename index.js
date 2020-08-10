@@ -7,6 +7,11 @@ const PORT = 2000;
 console.log(`Server is listen on port ${PORT}`, `http://localhost:${PORT}`);
 
 const server = (req, res) => {
+  if (req.method === "GET" && req.url === "/") {
+    res.setHeader("Content-Type", "text/html");
+    res.statusCode = 200;
+    res.end("Welcome to the notes API");
+  }
   if (req.method === "GET" && url.parse(req.url).pathname === "/search") {
     const directory = querystring.parse(req.url).directory;
     const title = querystring.parse(req.url)["/search?title"];
